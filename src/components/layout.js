@@ -1,18 +1,24 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
+import { Container } from "../elements/components";
+import Header from "./header";
+import MobileMenu from "./mobilemenu";
+import "../scss/main.scss";
+import { useTransition } from "react-spring";
+import styled from "styled-components";
+import { navigate } from "@reach/router";
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
-import "./layout.css"
+const links = [
+  { path: "/", name: "Home" },
+  { path: "/about", name: "About" },
+  { path: "/projects", name: "Projects" },
+  { path: "/contactme", name: "Contact Me" },
+];
 
 const Layout = ({ children }) => {
+  const [mobileMenu, setMobileMenu] = useState(false);
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -21,31 +27,56 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
+
+  const transitions = useTransition(mobileMenu, null, {
+    from: { transform: "translateX(100vw)" },
+    enter: { transform: "translateX(-0)" },
+    leave: { transform: "translateX(100vw)" },
+  });
+
+  const linkHandler = link => {
+    setMobileMenu(false);
+    navigate(link);
+  };
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
-}
+    <Container>
+      <Header
+        siteTitle={data.site.siteMetadata.title}
+        links={links}
+        setMobileMenu={setMobileMenu}
+      />
+      <main>{children}</main>
+      {transitions.map(
+        ({ item, key, props }) =>
+          item && (
+            <MobileMenu
+              animationStyle={props}
+              key={key}
+              links={links}
+              setMobileMenu={setMobileMenu}
+              linkHandler={linkHandler}
+            ></MobileMenu>
+          )
+      )}
+    </Container>
+  );
+};
+
+export const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: #7f5a83;
+  background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+`;
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;

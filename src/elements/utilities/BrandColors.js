@@ -1,0 +1,18 @@
+export const brands = {
+  linkedin: "#2867B2",
+  github: "#24292e",
+  html5: "#e44d26",
+  css3: "#1572b6",
+  javascript: "#edd84c",
+  sass: "#cb6699",
+  react: "#61dafb",
+  vue: "#41b883",
+  node: "#23b45d",
+  mysql: "#00618a",
+  mongodb: "#4faa41",
+  git: "#f34f29",
+  python: "#3470A1",
+  nginx: "#009900",
+  material: "#00ABF7",
+  gatsby: "#642D96",
+};

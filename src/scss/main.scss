@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: Quicksand;
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/Quicksand-Regular.ttf") format("truetype");
+  font-display: auto;
+}
+
+@font-face {
+  font-family: Quicksand;
+  font-weight: 600;
+  font-style: normal;
+  src: url("../fonts/Quicksand-Medium.ttf") format("truetype");
+  font-display: auto;
+}
+
+@font-face {
+  font-family: Quicksand;
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/Quicksand-Bold.ttf") format("truetype");
+  font-display: auto;
+}
+
+@font-face {
+  font-family: Lato;
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/Lato-Regular.ttf") format("truetype");
+  font-display: auto;
+}
+
+@font-face {
+  font-family: Lato;
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/Lato-Bold.ttf") format("truetype");
+  font-display: auto;
+}
+
+@font-face {
+  font-family: Caveat;
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/Caveat-Bold.ttf") format("truetype");
+  font-display: auto;
+}
