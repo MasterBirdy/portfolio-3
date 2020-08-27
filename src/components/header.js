@@ -31,27 +31,58 @@ const Header = ({ links, setMobileMenu }) => {
         {!isMobile && (
           <NavigationList>
             {links.map(link => (
-              <NavigationListItem key={link.name}>
-                <Link to={link.path} activeClassName="active">
+              <ColoredNavigationListItem key={link.name} color={link.color}>
+                <ColoredLink to={link.path} activeClassName="active">
                   {link.name}
-                </Link>
-              </NavigationListItem>
+                </ColoredLink>
+              </ColoredNavigationListItem>
             ))}
-            <a
-              href={
-                "https://documents-masterbirdy.s3-us-west-1.amazonaws.com/resume-matthew.pdf"
-              }
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <NavigationListItem>Resume</NavigationListItem>
-            </a>
+
+            <ColoredNavigationListItem>
+              <a
+                href={
+                  "https://documents-masterbirdy.s3-us-west-1.amazonaws.com/resume-matthew.pdf"
+                }
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Resume
+              </a>
+            </ColoredNavigationListItem>
           </NavigationList>
         )}
       </NavigationBar>
     </header>
   );
 };
+
+export const ColoredNavigationListItem = styled(NavigationListItem)`
+  a {
+    position: relative;
+    &:after {
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -0.4rem;
+      left: 0;
+      content: "";
+      background-color: ${props => (props.color ? props.color : "#3978e6")};
+      transition: all 0.5s ease-out;
+    }
+
+    &.active:after {
+      width: 100%;
+    }
+
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+`;
+
+export const ColoredLink = styled(Link)``;
 
 export const IconWrapper = styled.div`
   font-size: 2.5rem;

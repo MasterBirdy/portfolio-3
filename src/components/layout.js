@@ -10,10 +10,10 @@ import styled from "styled-components";
 import { navigate } from "@reach/router";
 
 const links = [
-  { path: "/", name: "Home" },
-  { path: "/about", name: "About" },
-  { path: "/projects", name: "Projects" },
-  { path: "/contactme", name: "Contact Me" },
+  { path: "/", name: "Home", color: "#db2e14" },
+  { path: "/about", name: "About", color: "#e89c23" },
+  { path: "/projects", name: "Projects", color: "#ebde36" },
+  { path: "/contactme", name: "Contact Me", color: "#23cc5b" },
 ];
 
 const Layout = ({ children }) => {
