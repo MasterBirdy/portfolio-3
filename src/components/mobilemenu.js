@@ -11,7 +11,7 @@ const MobileMenu = ({ links, setMobileMenu, animationStyle, linkHandler }) => {
       </ButtonWrapper>
       <LinkList>
         {links.map(link => (
-          <ListItem onClick={() => linkHandler(link.path)}>
+          <ListItem key={link.name} onClick={() => linkHandler(link.path)}>
             {link.name}
           </ListItem>
         ))}

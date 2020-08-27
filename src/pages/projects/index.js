@@ -207,6 +207,9 @@ const Projects = () => {
 export const ProjectsGrid = styled(Grid)`
   grid-row-gap: 2rem;
   grid-column-gap: 2rem;
+  ${below.m`
+  grid-template-columns: repeat(4, 1fr);
+  `}
   ${below.s`
   grid-template-columns: repeat(2, 1fr);
   `}

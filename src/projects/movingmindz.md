@@ -8,7 +8,7 @@ order: 1
 slug: movingmindz
 backgroundColor: "#f39f86"
 backgroundColor2: "#e3bb4d"
-description: A full stack web application created with React and Hapi designed for students to learn Python through lessons using the Turtle library with a STEM-focused curriculum.
+description: A full stack web application created with React and Hapi designed for students to learn Python. It uses a live code editor and console to display interactive lessons using the Python Turtle Graphics library with a STEM-focused curriculum.
 demolink: https://www.movingmindz.xyz/
 githublink: https://bitbucket.org/MasterBirdy/pythonlesson/src/master/
 technologies:

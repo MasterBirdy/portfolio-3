@@ -8,7 +8,7 @@ order: 8
 slug: countryviewer
 backgroundColor: "#60d1bc"
 backgroundColor2: "#9EABE4"
-description: A Vue application using the REST Countries API to complete a front end challenge by Frontend Mentor, replicating UI design specifications to make a country data viewer.
+description: A Vue application using the REST Countries API to complete a front end challenge by Frontend Mentor, replicating UI design specifications to make a country data viewer. You can sort by region, filter names, and get specific country data.
 demolink: https://awesome-colden-14cbac.netlify.com/
 githublink: https://github.com/MasterBirdy/rest-countries
 technologies:
