@@ -33,7 +33,11 @@ const ProjectPage = ({ data }) => {
   let laptopImage = data.allFile.edges.find(({ node }) =>
     node.name.includes("macbook")
   );
-  laptopImage = laptopImage.node.childImageSharp.fluid;
+  if (laptopImage) laptopImage = laptopImage.node.childImageSharp.fluid;
+  let phoneImage = data.allFile.edges.find(({ node }) =>
+    node.name.includes("phone")
+  );
+  if (phoneImage) phoneImage = phoneImage.node.childImageSharp.fluid;
 
   const filteredTechnologyArray = technologies
     ? TechnologyArray.filter(tech => technologies.includes(tech.className))
@@ -65,7 +69,7 @@ const ProjectPage = ({ data }) => {
         <GridItem start="7" span="6" medSpan="12">
           <AnimatedProjectImg
             style={props}
-            fluid={laptopImage}
+            fluid={laptopImage ? laptopImage : phoneImage}
           ></AnimatedProjectImg>
         </GridItem>
       </ProductGrid>
