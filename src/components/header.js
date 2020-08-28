@@ -8,15 +8,11 @@ import {
   Logo,
   Letter,
 } from "../elements/components";
-import useMobile from "../hooks/useMobile";
 import { FaBars } from "react-icons/fa";
 import styled from "styled-components";
 import { below } from "../elements/utilities";
-import Media from "react-media";
 
 const Header = ({ links, setMobileMenu }) => {
-  const isMobile = useMobile();
-
   return (
     <header>
       <NavigationBar>
@@ -85,10 +81,8 @@ export const ColoredLink = styled(Link)``;
 export const IconWrapper = styled.div`
   font-size: 2.5rem;
   display: none;
-
   ${below.s`
   display: block;
-
   `}
 `;
 
