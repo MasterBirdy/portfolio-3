@@ -11,6 +11,7 @@ import {
 import useMobile from "../hooks/useMobile";
 import { FaBars } from "react-icons/fa";
 import styled from "styled-components";
+import { below } from "../elements/utilities";
 import Media from "react-media";
 
 const Header = ({ links, setMobileMenu }) => {
@@ -24,45 +25,30 @@ const Header = ({ links, setMobileMenu }) => {
             <Letter>m</Letter>
           </Logo>
         </Link>
-        <Media
-          queries={{ small: "(max-width: 768px)", large: "(min-width: 769px)" }}
-        >
-          {matches => (
-            <>
-              {matches.small && (
-                <IconWrapper onClick={() => setMobileMenu(true)}>
-                  <FaBars></FaBars>
-                </IconWrapper>
-              )}
-              {matches.large && (
-                <NavigationList>
-                  {links.map(link => (
-                    <ColoredNavigationListItem
-                      key={link.name}
-                      color={link.color}
-                    >
-                      <ColoredLink to={link.path} activeClassName="active">
-                        {link.name}
-                      </ColoredLink>
-                    </ColoredNavigationListItem>
-                  ))}
+        <IconWrapper onClick={() => setMobileMenu(true)}>
+          <FaBars></FaBars>
+        </IconWrapper>
+        <NavigationList>
+          {links.map(link => (
+            <ColoredNavigationListItem key={link.name} color={link.color}>
+              <ColoredLink to={link.path} activeClassName="active">
+                {link.name}
+              </ColoredLink>
+            </ColoredNavigationListItem>
+          ))}
 
-                  <ColoredNavigationListItem>
-                    <a
-                      href={
-                        "https://documents-masterbirdy.s3-us-west-1.amazonaws.com/resume-matthew.pdf"
-                      }
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      Resume
-                    </a>
-                  </ColoredNavigationListItem>
-                </NavigationList>
-              )}
-            </>
-          )}
-        </Media>
+          <ColoredNavigationListItem>
+            <a
+              href={
+                "https://documents-masterbirdy.s3-us-west-1.amazonaws.com/resume-matthew.pdf"
+              }
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Resume
+            </a>
+          </ColoredNavigationListItem>
+        </NavigationList>
       </NavigationBar>
     </header>
   );
@@ -98,6 +84,12 @@ export const ColoredLink = styled(Link)``;
 
 export const IconWrapper = styled.div`
   font-size: 2.5rem;
+  display: none;
+
+  ${below.s`
+  display: block;
+
+  `}
 `;
 
 Header.propTypes = {

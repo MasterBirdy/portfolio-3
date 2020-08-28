@@ -111,6 +111,7 @@ export const ProjectImg = styled(Img)`
   margin: 0 auto;
   width: 100%;
   max-width: 45rem;
+  pointer-events: none;
   margin-top: ${props => (props.phone ? 0 : -4)}rem;
   margin-bottom: ${props => (props.phone ? 3 : 0)}rem;
   filter: drop-shadow(0 0 0.2rem #888);

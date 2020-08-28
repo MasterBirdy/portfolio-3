@@ -25,6 +25,9 @@ export const NavigationList = styled.ul`
   list-style: none;
   display: flex;
   justify-content: space-between;
+  ${below.s`
+  display: none;
+  `}
 `;
 
 export const NavigationListItem = styled.li`
