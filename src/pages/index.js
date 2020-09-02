@@ -115,6 +115,7 @@ const IndexPage = () => {
               <a
                 href="https://github.com/masterbirdy"
                 target="_blank"
+                aria-label="Github"
                 rel="noopener noreferrer"
               >
                 <FaGithub className="github" alt="Github Icon"></FaGithub>
@@ -123,6 +124,7 @@ const IndexPage = () => {
                 href="https://www.linkedin.com/in/matthew-ito/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Linkedin"
               >
                 <FaLinkedin
                   className="linkedin"

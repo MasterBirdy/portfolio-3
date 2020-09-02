@@ -24,19 +24,29 @@ const ContactMe = () => {
             method="POST"
           >
             <Flex direction="column">
-              <FormLabel aria-label="required" htmlFor="name">
-                Name
-              </FormLabel>
-              <FormInputText type="text" name="name" required></FormInputText>
-              <FormLabel aria-label="required" htmlFor="email">
-                Email
-              </FormLabel>
-              <FormInputText type="email" name="email" required></FormInputText>
+              <FormLabel htmlFor="name">Name</FormLabel>
+              <FormInputText
+                id="name"
+                aria-label="Name"
+                type="text"
+                name="name"
+                required
+              ></FormInputText>
+              <FormLabel htmlFor="email">Email</FormLabel>
+              <FormInputText
+                id="email"
+                aria-label="E-mail"
+                type="email"
+                name="email"
+                required
+              ></FormInputText>
               <FormLabel aria-label="required" htmlFor="message">
                 Message
               </FormLabel>
               <FormInputTextArea
+                id="message"
                 name="message"
+                aria-label="Message"
                 rows="4"
                 required
               ></FormInputTextArea>
@@ -80,7 +90,7 @@ export const FormLabel = styled.label`
   font-size: 1.7rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
-  color: #444;
+  color: #333;
 `;
 
 export const FormInputText = styled.input`
@@ -112,9 +122,9 @@ export const ButtonHolder = styled.div`
 `;
 
 export const SubmitButton = styled(Button)`
-  border: 1px solid #a3ed9f;
-  background: #91ebba;
-  background: linear-zgradient(315deg, #a3ed9f 0%, #91ebba 100%);
+  border: 1px solid #3bb78f;
+  background: #0bab64;
+  background: linear-gradient(315deg, #0bab64 0%, #3bb78f 100%);
 `;
 
 export default ContactMe;

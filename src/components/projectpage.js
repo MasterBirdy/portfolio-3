@@ -54,12 +54,22 @@ const ProjectPage = ({ data }) => {
             <BigP marginTop="2">{description}</BigP>
             <ButtonHolder>
               {githublink && (
-                <a href={githublink} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={githublink}
+                  target="_blank"
+                  aria-label="Link to Code"
+                  rel="noopener noreferrer"
+                >
                   <CodeButton>Code</CodeButton>
                 </a>
               )}
               {demolink && (
-                <a href={demolink} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={demolink}
+                  target="_blank"
+                  aria-label="Link to Live Demo"
+                  rel="noopener noreferrer"
+                >
                   <DemoButton>Live Demo</DemoButton>
                 </a>
               )}
