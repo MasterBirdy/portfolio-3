@@ -14,7 +14,10 @@ const About = () => {
       <SEO title="About Page" />
       <Grid marginTop="9.25" columns="12" medMarginTop="6">
         <OrderGridItem medSpan="10" smallSpan="12" span="5">
-          <FullWidthImage src={runnerSVG}></FullWidthImage>
+          <FullWidthImage
+            src={runnerSVG}
+            alt="Person getting ready to run a race"
+          ></FullWidthImage>
         </OrderGridItem>
         <GridItem start="7" span="5" medSpan="11" smallSpan="12">
           <Flex direction="column">

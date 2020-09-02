@@ -46,7 +46,7 @@ const ProjectPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Project Page" />
-      <ProductGrid marginTop="10" columns="12" medMarginTop="5">
+      <ProductGrid marginTop="8" columns="12" medMarginTop="5">
         <GridItem span="5" medSpan="12">
           <Flex direction="column">
             <Header1>{title}</Header1>
@@ -71,6 +71,7 @@ const ProjectPage = ({ data }) => {
             phone={!laptopImage}
             style={props}
             fluid={laptopImage ? laptopImage : phoneImage}
+            alt={`${laptopImage ? "Laptop" : "Phone"} image for ${title}`}
           ></AnimatedProjectImg>
         </GridItem>
       </ProductGrid>

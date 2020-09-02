@@ -47,7 +47,10 @@ const ContactMe = () => {
           </Form>
         </GridItem>
         <OrderGridItem span="6" start="7" medSpan="12">
-          <FullWidthImage src={workingSVG}></FullWidthImage>
+          <FullWidthImage
+            src={workingSVG}
+            alt="Person sitting and drinking coffee outside with laptop"
+          ></FullWidthImage>
         </OrderGridItem>
       </Grid>
     </Layout>

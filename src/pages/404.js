@@ -21,7 +21,10 @@ const NotFoundPage = () => (
         </Header2>
       </GridItem>
       <OrderGridItem start="7" span="6" medSpan="12">
-        <FullWidthImage src={starsSVG}></FullWidthImage>
+        <FullWidthImage
+          src={starsSVG}
+          alt={"Lost person looking at the stars"}
+        ></FullWidthImage>
       </OrderGridItem>
     </Grid>
   </Layout>

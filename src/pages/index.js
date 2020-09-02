@@ -117,20 +117,26 @@ const IndexPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaGithub className="github"></FaGithub>
+                <FaGithub className="github" alt="Github Icon"></FaGithub>
               </a>
               <a
                 href="https://www.linkedin.com/in/matthew-ito/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaLinkedin className="linkedin"></FaLinkedin>
+                <FaLinkedin
+                  className="linkedin"
+                  alt="Linkedin Icon"
+                ></FaLinkedin>
               </a>
             </IconHolder>
           </Flex>
         </GridItem>
         <GridItem span="6" start="7" medSpan="10" smallSpan="12">
-          <FullWidthImage src={freelancerSVG}></FullWidthImage>
+          <FullWidthImage
+            src={freelancerSVG}
+            alt={"Freelance worker using laptop to work"}
+          ></FullWidthImage>
         </GridItem>
       </Grid>
       <TechRow marginTop="7" items={filteredTechnologyArray}></TechRow>

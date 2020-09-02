@@ -35,7 +35,9 @@ const TechRow = ({ marginTop, items }) => {
             >
               <ConditionalFlex>
                 <TechItem brand={item.className}>
-                  {React.createElement(item.component, {})}
+                  {React.createElement(item.component, {
+                    alt: item.className + " web developement symbol",
+                  })}
                 </TechItem>
               </ConditionalFlex>
             </AnimatedGridItem>

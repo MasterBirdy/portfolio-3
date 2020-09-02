@@ -20,6 +20,7 @@ const fillerProjects = [
     backgroundColor: "#6de3c1",
     backgroundColor2: "#7CFFCB",
     icon: FaDog,
+    iconAlt: "Icon of a dog",
   },
   {
     rows: 1,
@@ -28,6 +29,7 @@ const fillerProjects = [
     backgroundColor: "#E5BDF6",
     backgroundColor2: "#cad9d9",
     icon: FaGamepad,
+    iconAlt: "Icon of a gamepad",
   },
   {
     rows: 1,
@@ -36,12 +38,14 @@ const fillerProjects = [
     backroundColor: "#F67062",
     backgroundColor2: "#FC5296",
     icon: RiGameFill,
+    iconAlt: "Icon of Pac-Man",
   },
   {
     rows: 1,
     columns: 1,
     order: 9,
     icon: BiRun,
+    iconAlt: "Icon of a person running",
   },
 ];
 
@@ -162,6 +166,11 @@ const Projects = () => {
                     fluid={
                       isThisMobile ? project.phoneImage : project.laptopImage
                     }
+                    alt={
+                      isThisMobile
+                        ? "Phone Image for Project"
+                        : "Laptop Image for Project"
+                    }
                   ></ProjectImg>
                 )}
                 {!isThisMobile && (
@@ -190,7 +199,10 @@ const Projects = () => {
                             {project.subtitle}
                           </ProjectCardSubtitle>
                         )}
-                        {project.icon && React.createElement(project.icon, {})}
+                        {project.icon &&
+                          React.createElement(project.icon, {
+                            alt: project.iconAlt,
+                          })}
                       </ProjectCardInfo>
                     </ProjectImgOverlay>
                   </>
