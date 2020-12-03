@@ -7,6 +7,13 @@ const size = {
   l: 1200,
 };
 
+/**
+ * @desc Update user
+ * @route PUT /api/users/:id
+ * @access Private/Admin
+ */
+//
+
 export const below = Object.keys(size).reduce((accumulator, label) => {
   accumulator[label] = (...args) => css`
     @media (max-width: ${size[label]}px) {

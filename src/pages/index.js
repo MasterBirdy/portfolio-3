@@ -21,13 +21,13 @@ const homePageTech = [
   "html5",
   "css3",
   "javascript",
+  "typescript",
   "sass",
   "vue",
   "react",
   "node",
   "mysql",
-  "mongodb",
-  "gatsby",
+  "redux",
 ];
 
 const filteredTechnologyArray = technologyArray.filter(tech =>

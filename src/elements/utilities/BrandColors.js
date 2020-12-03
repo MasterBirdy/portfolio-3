@@ -15,4 +15,6 @@ export const brands = {
   nginx: "#009900",
   material: "#00ABF7",
   gatsby: "#642D96",
+  typescript: "#2D79C7",
+  redux: "#764ABC",
 };

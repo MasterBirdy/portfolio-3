@@ -9,7 +9,6 @@ import { animated, useTransition } from "react-spring";
 import { navigate } from "@reach/router";
 import { FaDog, FaGamepad } from "react-icons/fa";
 import { RiGameFill } from "react-icons/ri";
-import { BiRun } from "react-icons/bi";
 import useMobile from "../../hooks/useMobile";
 
 const fillerProjects = [
@@ -40,13 +39,13 @@ const fillerProjects = [
     icon: RiGameFill,
     iconAlt: "Icon of Pac-Man",
   },
-  {
-    rows: 1,
-    columns: 1,
-    order: 9,
-    icon: BiRun,
-    iconAlt: "Icon of a person running",
-  },
+  // {
+  //   rows: 1,
+  //   columns: 1,
+  //   order: 9,
+  //   icon: BiRun,
+  //   iconAlt: "Icon of a person running",
+  // },
 ];
 
 const Projects = () => {

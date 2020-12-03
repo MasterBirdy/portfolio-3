@@ -13,6 +13,8 @@ import {
   SiMongodb,
   SiMaterialUi,
   SiGatsby,
+  SiTypescript,
+  SiRedux,
 } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
 import { DiNginx } from "react-icons/di";
@@ -21,9 +23,11 @@ const technologyArray = [
   { className: "html5", component: FaHtml5 },
   { className: "css3", component: FaCss3Alt },
   { className: "javascript", component: SiJavascript },
+  { className: "typescript", component: SiTypescript },
   { className: "sass", component: FaSass },
   { className: "vue", component: FaVuejs },
   { className: "react", component: FaReact },
+  { className: "redux", component: SiRedux },
   { className: "node", component: FaNodeJs },
   { className: "python", component: FaPython },
   { className: "material", component: SiMaterialUi },
