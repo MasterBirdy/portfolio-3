@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { Grid, GridItem, Flex, below } from "../elements/utilities";
@@ -11,6 +12,7 @@ import workingSVG from "../images/undraw_working.svg";
 import styled from "styled-components";
 
 const ContactMe = () => {
+  const [ captcha, setCaptcha ] = useState("");
   return (
     <Layout>
       <SEO title="Contact Me" />
@@ -22,6 +24,7 @@ const ContactMe = () => {
           <Form
             action="https://getform.io/f/01d6ec1a-ecce-4018-94b5-631294b405c6"
             method="POST"
+            onSubmit={(e) => { if (!captcha) { e.preventDefault(); } }}
           >
             <Flex direction="column">
               <FormLabel htmlFor="name">Name</FormLabel>
@@ -55,6 +58,13 @@ const ContactMe = () => {
               </ButtonHolder>
             </Flex>
           </Form>
+          <ReCAPTCHADiv>
+            <ReCAPTCHA
+              sitekey={process.env.GATSBY_SITE_KEY_RECAPTCHA}
+              onChange={(value) => {setCaptcha(value)}}
+            >
+            </ReCAPTCHA>
+          </ReCAPTCHADiv>
         </GridItem>
         <OrderGridItem span="6" start="7" medSpan="12">
           <FullWidthImage
@@ -125,6 +135,10 @@ export const SubmitButton = styled(Button)`
   border: 1px solid #3bb78f;
   background: #0bab64;
   background: linear-gradient(315deg, #0bab64 0%, #3bb78f 100%);
+`;
+
+export const ReCAPTCHADiv = styled.div`
+  margin-top: 1rem;
 `;
 
 export default ContactMe;
